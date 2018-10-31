@@ -1,0 +1,7 @@
+
+<div>
+	<%= form_for @gossip, url: {action: "create"}, html: {:class => 'form-group'} do |f| %> 
+		<%= f.text_area :content, size: "20x12", class: 'form-control', placeholder: 'balance ton info' %> <br>
+		<%= f.submit "Create" %>
+	<% end %>
+</div>
