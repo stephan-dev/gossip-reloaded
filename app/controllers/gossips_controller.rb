@@ -5,6 +5,12 @@ class GossipsController < ApplicationController
 
 	def create
 		gossip = params[:gossip]
-		Gossip.create(content: gossip[:content])
+		@gossip = Gossip.create!(content: gossip[:content])
+
+		redirect_to @gossip
+	end
+
+	def show
+		@gossip = Gossip.find(params[:id])
 	end
 end
