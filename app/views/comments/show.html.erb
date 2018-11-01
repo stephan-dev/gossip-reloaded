@@ -1,5 +1,9 @@
 
-<h1>wesh gros bien</h1>
+<h2>Tous les commentaires de cette info!</h1>
 
-<%= @commentaire.anonymous_commentor %>
-<%= @commentaire.content %>
+<p>info : "<%= @gossip.content %>"</p>
+
+<% @gossip.comments.each do |comment| %>
+	<%= comment.anonymous_commentor %>
+	<p><%= comment.content %><p><br>
+<% end %>

@@ -6,18 +6,27 @@ class CommentsController < ApplicationController
 
 	def create
 		paracomm = params[:comment]
-		puts paracomm
+		puts "ceci est params[:comment] dans la méthode create commentaire : #{paracomm}"
 		@gossip = Gossip.find(params[:gossip_id])
 #		puts @gossip
 		@comment = @gossip.comments.create(content: paracomm[:content] )
 
 		puts @comment
-		redirect_to gossip_comment_path(@comment, :gossip_id)
+		redirect_to gossip_comment_path(@gossip, @comment)
 		#action:gossip_comment_path, id:1
 	end
 
 	def show
-		@commentaire = Comment.find(params[:gossip_id])
+		@gossip = Gossip.find(params[:gossip_id])
+		
+		puts "ceci est @gossip #{@gossip}"
+		puts "ceci est @gossip.content : #{@gossip.content}"
+		puts "ceci est params : #{params}"
+
+		return @comment
+		@commentaire = Comment.find(id: params[:comment_id])
+
+		#Couldn't find Comment with 'id'={:gossip_id=>"1"}
 	end
 
 	def index

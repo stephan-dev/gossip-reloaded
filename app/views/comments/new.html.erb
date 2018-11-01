@@ -1,7 +1,9 @@
 
 	<%= form_for @comment, url: {action: "create"}, html: {:class => 'form-group'} do |f| %> 
 
+		<%= f.text_area :anonymous_commentor, size: "5em", class: 'form-control', placeholder: 'auteur' %> <br>
 		<%= f.text_area :content, size: "5em", class: 'form-control', placeholder: 'ton commentaire' %> <br>
+
 
 		<%= f.submit "Create" %>
 	<% end %>
