@@ -13,5 +13,14 @@ lien pour afficher tous -->
     		<!-- <a href="/potin/<%#gossip[:id]%>">page de ce potin</a> -->
   	</div>
   	<%= link_to "modifier", edit_gossip_path, class: "btn btn-success" %>
+  	<%= link_to "commenter", new_gossip_comment_path(params[:id]), class: "btn btn-success" %>
+
+<!-- 
+
+<div>
+</div>
+
+ -->
+  	<%# @comment %>
 
 </div>

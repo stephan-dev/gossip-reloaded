@@ -1,6 +1,7 @@
 class GossipsController < ApplicationController
 	def new
 		@gossip = Gossip.new
+		#@comment = Comment.new
 	end
 
 	def create
