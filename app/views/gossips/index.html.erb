@@ -1,0 +1,21 @@
+
+<h1>salut</h1>
+
+
+<% @gossip.each do |gossip| %>
+
+	<div class="card" style="width: 20rem;">
+  		
+  			<div class="card-body">
+    			<h5 class="card-title"> <%= gossip.anonymous_gossiper %></h5>
+    			<p class="card-text"><%= "a écrit : \"#{gossip['content']}\"" %></p>
+    			
+    			<%= link_to "page de cette info", gossip_path(gossip.id), class: "btn btn-default" %>
+
+    			<%=  link_to "modifier", edit_gossip_path(gossip.id), class: "btn btn-default" %>
+    			<%=  link_to "supprimer", gossip_path(gossip.id), class: "btn btn-danger", :data => {:confirm => 'Are you sure?', :method => "DELETE"} %>
+  			</div>
+	</div>
+	<br>
+
+<% end %>
