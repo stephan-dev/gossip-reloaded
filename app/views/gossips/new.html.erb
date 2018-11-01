@@ -1,10 +1,15 @@
 
 <div>
-	<%= form_for @gossip, url: {action: "create"}, html: {:class => 'form-group'} do |f| %> 
+	<% if session[:current_user_id] != nil %>
 
-		<%= f.text_area :anonymous_gossiper, size: "5em", placeholder: 'ton blaze?' %> <br>
-		<%= f.text_area :content, size: "5em", class: 'form-control', placeholder: 'balance ton info' %> <br>
+		<%= form_for @gossip, url: {action: "create"}, html: {:class => 'form-group'} do |f| %> 
 
-		<%= f.submit "Create" %>
+			<%= f.text_area :anonymous_gossiper, size: "5em", placeholder: 'ton blaze?' %> <br>
+			<%= f.text_area :content, size: "5em", class: 'form-control', placeholder: 'balance ton info' %> <br>
+
+			<%= f.submit "Create" %>
+		<% end %>
+	<% else %>
+		<p>prière de te connecter pour poster un gossip!</p><a href="../users/login">se connecter</a>
 	<% end %>
 </div>

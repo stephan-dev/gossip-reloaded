@@ -2,6 +2,7 @@ class GossipsController < ApplicationController
 	def new
 		@gossip = Gossip.new
 		#@comment = Comment.new
+		#session[:current_user_id] = @user.id
 	end
 
 	def create
