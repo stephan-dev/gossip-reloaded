@@ -27,7 +27,10 @@
 
     <%= render partial: "layouts/header" %>
     <div class="container-fluid">
-      <br><br>
+      <br>
+      <div><%= flash[:info] %></div>
+      <div><%= session[:current_user_id]%></div>
+      <br>
       <%= yield %>
     </div>
   </body>

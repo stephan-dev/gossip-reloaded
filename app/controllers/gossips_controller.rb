@@ -13,6 +13,7 @@ class GossipsController < ApplicationController
 
 	def show
 		@gossip = Gossip.find(params[:id])
+		puts session[:current_user_id]
 	end
 
 	def edit

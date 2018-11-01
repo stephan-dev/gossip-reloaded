@@ -1,0 +1,10 @@
+
+
+<h2>s'enregistrer</h2>
+
+<%= form_for @user, url: {action: "create"}, html: {:class => 'form-group'} do |t| %>
+	<%= t.text_field :name, placeholder: "ton nom"  %>
+	<%= t.text_field :password, placeholder: "choisis un mot de passe"  %>
+	<%= t.submit "Create" %>
+
+<% end %>

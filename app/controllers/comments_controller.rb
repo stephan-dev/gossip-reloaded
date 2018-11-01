@@ -18,10 +18,6 @@ class CommentsController < ApplicationController
 
 	def show
 		@gossip = Gossip.find(params[:gossip_id])
-		
-		puts "ceci est @gossip #{@gossip}"
-		puts "ceci est @gossip.content : #{@gossip.content}"
-		puts "ceci est params : #{params}"
 
 		return @comment
 		@commentaire = Comment.find(id: params[:comment_id])

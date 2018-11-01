@@ -5,6 +5,8 @@ lien pour afficher tous -->
 
 <%= link_to "toutes les infos", gossips_path, class: "btn btn-lg btn-primary" %>
 
+<%=  session[:current_user_id] %> 
+
 <div class="card" style="width: 20rem;">
 	<div class="card-body">
     	<h5 class="card-title">salut, voici ton info!</h5>
@@ -12,7 +14,7 @@ lien pour afficher tous -->
     		<em>"<%= @gossip.content %>"</em>
     		<!-- <a href="/potin/<%#gossip[:id]%>">page de ce potin</a> -->
   	</div>
-  	<%= link_to "modifier", edit_gossip_path, class: "btn btn-success" %>
+  	<%= link_to "modifier", edit_gossip_path, class: "btn btn-secondary" %>
   	<%= link_to "commenter", new_gossip_comment_path(params[:id]), class: "btn btn-success" %>
 
 <!-- 
