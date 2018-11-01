@@ -1,6 +1,6 @@
 
 <div>
-	<% if session[:current_user_id] != nil %>
+	<%# if session[:current_user_id] != nil %>
 
 		<%= form_for @gossip, url: {action: "create"}, html: {:class => 'form-group'} do |f| %> 
 
@@ -9,7 +9,7 @@
 
 			<%= f.submit "Create" %>
 		<% end %>
-	<% else %>
-		<p>prière de te connecter pour poster un gossip! (ou revenir à l'accueil pour s'enregistrer)</p><a href="../users/login">se connecter</a>
-	<% end %>
+	<%# else %>
+		<!-- <p>prière de te connecter pour poster un gossip! (ou revenir à l'accueil pour s'enregistrer)</p><a href="../users/login">se connecter</a> -->
+	<%# end %>
 </div>
